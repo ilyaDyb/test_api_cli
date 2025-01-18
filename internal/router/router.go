@@ -1,16 +1,11 @@
 package router
 
-import "github.com/ilyaDyb/internal/functions"
+import "github.com/ilyaDyb/internal/requester"
 
-func CliCommandsRouter(value string) (string, error) {
-	msgs, err := functions.GetBaseJsonMessages()
-	if err != nil {
-		return "", err
+
+func CliCommandsRouter(command string, requester *requester.Requester) error {
+	switch command {
+	// case "test": requester.Make
 	}
-	switch value {
-	case "help":
-		return msgs.HelpMessage, nil
-	default:
-		return "Unknown command", nil
-	}
+	return nil
 }
